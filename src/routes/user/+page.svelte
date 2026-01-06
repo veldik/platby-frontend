@@ -14,18 +14,38 @@
             data = response.data.data.status;
             console.log(response.data);
 
+            function declension(count, one, few, many) {
+                if (count === 1) {
+                    return one;
+                } else if (count >= 2 && count <= 4) {
+                    return few;
+                } else {
+                    return many;
+                }
+            }
+
             stats = [
                 {
                     title: 'Zaplaceno',
                     description: 'Celkem jsi zaplatil',
                     value: `${data.paid.amount} Kč`,
-                    tooltip: `${data.paid.records} plateb`,
+                    tooltip: `${data.paid.records} ${declension(
+                        data.paid.records,
+                        'platba',
+                        'platby',
+                        'plateb'
+                    )}`,
                 },
                 {
                     title: 'Nezaplaceno',
                     description: 'Celkem ti zbývá zaplatit',
-                    value: `${data.unpaid.amount} Kč`,
-                    tooltip: `${data.unpaid.records} plateb`,
+                    value:  `${data.unpaid.amount} Kč`,
+                    tooltip: `${data.unpaid.records} ${declension(
+                        data.unpaid.records,
+                        'platba',
+                        'platby',
+                        'plateb'
+                    )}`,
                 },
             ];
 
