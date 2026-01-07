@@ -1,6 +1,6 @@
 <script>
     import Title from '$lib/components/title.svelte';
-    import { Card, Listgroup, Avatar, Spinner, Tooltip } from 'flowbite-svelte';
+    import { Card, Listgroup, Spinner, Tooltip } from 'flowbite-svelte';
     import axios from 'axios';
 
     import { onMount } from 'svelte';
@@ -40,7 +40,7 @@
                 {
                     title: 'Platiči',
                     description: 'Celkový počet platičů',
-                    value: data. payers,
+                    value: data.payers,
                 },
                 {
                     title:  'Zaplaceno',
@@ -51,7 +51,7 @@
                         minimumFractionDigits: 0,
                     }).format(data.paid.amount)}`,
                     tooltip: `${data.paid.records} ${declension(
-                        data. paid.records,
+                        data.paid.records,
                         'platba',
                         'platby',
                         'plateb'
@@ -75,7 +75,7 @@
                 {
                     title: 'Uživatelé',
                     description: 'Celkový počet uživatelů',
-                    value: data. users.total,
+                    value: data.users.total,
                     tooltip: `${data.users.admins} ${declension(
                         data.users.admins,
                         'admin',
@@ -97,13 +97,16 @@
                         minimumFractionDigits: 0,
                     }).format(data.credits.amount.total)}`,
                     tooltip: `${data.credits.records.total} ${declension(
-                        data.credits. records.total,
+                        data.credits.records.total,
                         'pohyb',
                         'pohyby',
                         'pohybů'
                     )}`,
                 },
             ];
+        }
+
+        loadingStats = false;
     });
 </script>
 

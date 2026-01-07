@@ -1,6 +1,6 @@
 <script>
     import Title from '$lib/components/title.svelte';
-    import { Card, Listgroup, Avatar, Spinner, Tooltip } from 'flowbite-svelte';
+    import { Card, Listgroup, Spinner, Tooltip } from 'flowbite-svelte';
     import axios from 'axios';
 
     import { onMount } from 'svelte';
