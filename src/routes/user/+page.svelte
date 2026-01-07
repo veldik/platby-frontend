@@ -2,8 +2,8 @@
     import Title from '$lib/components/title.svelte';
     import { Card, Listgroup, Spinner, Tooltip } from 'flowbite-svelte';
     import axios from 'axios';
-
     import { onMount } from 'svelte';
+    import { declension } from '$lib/utils';
 
     let stats, data;
     let loadingStats = true;
@@ -14,15 +14,6 @@
             data = response.data.data.status;
             console.log(response.data);
 
-            function declension(count, one, few, many) {
-                if (count === 1) {
-                    return one;
-                } else if (count >= 2 && count <= 4) {
-                    return few;
-                } else {
-                    return many;
-                }
-            }
 
             stats = [
                 {
