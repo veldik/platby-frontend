@@ -13,3 +13,22 @@ Ostatní nastavení je výchozí pro nasazení SvelteKit aplikace na [Cloudflare
 | --- | --- | --- |
 | NODE_VERSION | 16 | verze node.js |  
 | PUBLIC_API_URL | https://api.platby.thevelda.eu | adresa API |  
+
+## Vývoj
+
+Nejprve je třeba zkopírovat soubor `.env.example` do `.env` a upravit podle potřeby, což znamená nastavit `PUBLIC_API_URL` na adresu vašeho backendu.
+
+Pro první spuštění vývojového serveru použijte příkaz:
+
+```bash
+npm install
+npm run dev
+```
+
+Tím se spustí vývojový sever.
+
+Pro každé další spuštění, pokud se nezměnily závislosti, stačí použít pouze:
+
+```bash
+npm run dev
+```
