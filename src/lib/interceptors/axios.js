@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { PUBLIC_API_URL } from '$env/static/public';
+import { env } from '$env/dynamic/public';
 import { goto } from '$app/navigation';
 import Cookies from 'js-cookie';
 
-axios.defaults.baseURL = PUBLIC_API_URL;
+axios.defaults.baseURL = env.PUBLIC_API_URL;
 axios.defaults.timeout = 10000;
 axios.defaults.headers.common['Authorization'] =
     `Bearer ` + Cookies.get('token');

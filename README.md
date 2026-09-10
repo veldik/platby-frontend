@@ -3,16 +3,17 @@
 Frontend ve Svelte k platebnímu systému.  
 Backend je v repozitáři [platby](https://github.com/veldik/platby).
 
-## Instalace 
-Frontend platebního systému je momentálně nastaven pro nasazení na [Cloudflare Pages](https://pages.cloudflare.com/).  
-Pro správné fungování je třeba nastavit proměnné prostředí. 
-Ostatní nastavení je výchozí pro nasazení SvelteKit aplikace na [Cloudflare Pages](https://pages.cloudflare.com/).
+## Nasazení
+Frontend běží jako Node aplikace (SvelteKit + `@sveltejs/adapter-node`).
+Build: `npm ci && npm run build`, spuštění: `npm start` (`node build`),
+server poslouchá na `0.0.0.0` a portu z `PORT` (výchozí `3000`).
 
 ### Proměnné prostředí
-| proměnná | hodnota | popis |  
+| proměnná | hodnota | popis |
 | --- | --- | --- |
-| NODE_VERSION | 16 | verze node.js |  
-| PUBLIC_API_URL | https://api.platby.thevelda.eu | adresa API |  
+| PUBLIC_API_URL | https://api.platby.thevelda.eu | adresa API — čte se za běhu (`$env/dynamic/public`) |
+| PROTOCOL_HEADER | x-forwarded-proto | důvěra reverzní proxy (HTTPS) |
+| HOST_HEADER | x-forwarded-host | důvěra reverzní proxy (hostname) |
 
 ## Vývoj
 

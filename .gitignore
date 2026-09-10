@@ -13,6 +13,4 @@ vite.config.ts.timestamp-*
 
 yarn-error.log
 
-package-lock.json
-
 yarn.lock
